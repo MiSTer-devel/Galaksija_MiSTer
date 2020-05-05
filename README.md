@@ -18,7 +18,7 @@ To load a program, type:
 ```
 OLD
 ```
-and press enter. Then press F12, select load and find the .gtp tape file to upload. After doing that, launch the menu again and switch the tape to playing. Go grab a beer because casette loading takes patience and when you see the cursor returned, switch the tape back to stopped and exit menu. Type RUN and off you go!
+and press enter. Then press F12, select load and find the .tap tape file to upload. After the progress bar disappears and the prompt returns, type RUN and off you go!
 
 ![img](img/loading.gif)
 
@@ -64,7 +64,7 @@ More details about the available commands can be found [here](https://en.wikiped
 * 1000-1FFF  Reserved for ROM B
 * 2000-2037  Keyboard map
 * 2038-203F  Latch
-* 2040-27FF  Latch and keyboard repeated 15 times
+* 2040-27FF  Latch and keyboard repeated 31 times
 * 2800-2BFF  Video RAM
 * 2C00-3FFF  On-board RAM
 * 4000-FFFF  RAM expansion
@@ -72,10 +72,7 @@ More details about the available commands can be found [here](https://en.wikiped
 
 ## Known issues
 
-* Scrolling behaves weird
-* Screen doesn't blank while loading program from tape
-* Emulation accuracy needs to be investigated
-  
+Some accuracy is lost for having own routines to generate video as opposed to implementing the composite video generation logic.  
 
 ## Miscellaneous tipes
 
