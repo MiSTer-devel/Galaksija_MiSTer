@@ -3,8 +3,7 @@ module galaksija_keyboard(
     input        reset,
     input  [5:0] addr,
     input [10:0] ps2_key,
-    output       key_out,
-    input        rd_key
+    output       key_out
 );
 
 reg [63:0]keys;
@@ -44,13 +43,7 @@ always @(posedge clk) begin
                     8'h22 : keys[8'd24] = pressed; // X
                     8'h35 : keys[8'd25] = pressed; // Y
                     8'h1A : keys[8'd26] = pressed; // Z                
-                    
-                    8'h75 : keys[8'd27] = pressed; // UP
-                    8'h72 : keys[8'd28] = pressed; // DOWN                    
-                    8'h66,                         // BACKSPACE
-                    8'h6B : keys[8'd29] = pressed; // LEFT                    
-                    8'h74 : keys[8'd30] = pressed; // RIGHT
-                                        
+                                                            
                     8'h29 : keys[8'd31] = pressed; // SPACE                
                     8'h45 : keys[8'd32] = pressed; // 0
                     8'h16 : keys[8'd33] = pressed; // 1
@@ -92,36 +85,17 @@ always @(posedge clk) begin
                     8'h59 : keys[8'd53] = pressed; // SHIFT R
                     
                 endcase
-            if (keys[8'd53] == 1'b1) begin//shift
-                case (code[8:0])     
-                    8'h1C : keys[8'd01] = pressed; // a
-                    8'h32 : keys[8'd02] = pressed; // b
-                    8'h21 : keys[8'd03] = pressed; // c
-                    8'h23 : keys[8'd04] = pressed; // d
-                    8'h24 : keys[8'd05] = pressed; // e
-                    8'h2B : keys[8'd06] = pressed; // f
-                    8'h34 : keys[8'd07] = pressed; // g
-                    8'h33 : keys[8'd08] = pressed; // h
-                    8'h43 : keys[8'd09] = pressed; // i
-                    8'h3B : keys[8'd10] = pressed; // j
-                    8'h42 : keys[8'd11] = pressed; // k
-                    8'h4B : keys[8'd12] = pressed; // l
-                    8'h3A : keys[8'd13] = pressed; // m
-                    8'h31 : keys[8'd14] = pressed; // n
-                    8'h44 : keys[8'd15] = pressed; // O
-                    8'h4D : keys[8'd16] = pressed; // p
-                    8'h15 : keys[8'd17] = pressed; // q
-                    8'h2D : keys[8'd18] = pressed; // r
-                    8'h1B : keys[8'd19] = pressed; // s
-                    8'h2C : keys[8'd20] = pressed; // t
-                    8'h3C : keys[8'd21] = pressed; // u
-                    8'h2A : keys[8'd22] = pressed; // v
-                    8'h1D : keys[8'd23] = pressed; // w
-                    8'h22 : keys[8'd24] = pressed; // x
-                    8'h35 : keys[8'd25] = pressed; // y
-                    8'h1A : keys[8'd26] = pressed; // z
-                    endcase
-            end;
+
+					 // These accept extended codes as well
+                case (code[7:0])     
+                    8'h75 : keys[8'd27] = pressed; // UP
+                    8'h72 : keys[8'd28] = pressed; // DOWN                    
+                    8'h66,                         // BACKSPACE
+						  
+                    8'h6B : keys[8'd29] = pressed; // LEFT                    
+                    8'h74 : keys[8'd30] = pressed; // RIGHT
+                endcase
+            
     end
     
     key_out <= ~keys[addr];

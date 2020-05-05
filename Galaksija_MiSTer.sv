@@ -95,45 +95,52 @@ assign HDMI_SL  = 0;
 localparam CONF_STR = {
 	"Galaksija;;",
 	"-;",
-   "F,GTP;",
+   "F,TAP;",
 	"-;",
-	"O8,Tape drive is,Stopped,Playing;",
-   "O1,Aspect Ratio,4:3,16:9;",
-	"T9,Reset;",
+	"O23,Screen Color,White,Green,Amber,Cyan;",
+   "O1,Aspect Ratio,16:9,4:3;",
+	"R5,Break;",
+	"R9,Reset;",	
+	"-;",	
+	"T4,Type OLD before loading!;",
 	"V,v0.1.",`BUILD_DATE
 };
 
 assign LED = 1'b1;
-assign AUDIO_R = AUDIO_L;	
+assign AUDIO_S = 1'b0;
 
-assign VIDEO_ARX = status[1] ? 8'd16 : 8'd4;
-assign VIDEO_ARY = status[1] ? 8'd9 : 8'd3;
+/* Keep the max volume reasonable */
+assign AUDIO_R = {audio, 5'b0};
+assign AUDIO_L = {audio, 5'b0};
 
-wire				clk_1p7, clk_25, clk_3p125;
+assign VIDEO_ARX = status[1] ? 8'd4 : 8'd16;
+assign VIDEO_ARY = status[1] ? 8'd3 : 8'd9;
 
-pll pll (
-	 .refclk	   ( CLK_50M  ),
-	 .rst				( 1'b0	  ),
-	 .outclk_0     ( clk_1p7  ),
-	 .outclk_1     ( clk_25   ),
-	 .outclk_2     ( clk_3p125)
-	);
+wire				clk_6p25, clk_3p125;
 
-assign CLK_VIDEO = clk_25;
+/* Clock */
 
-wire		[7:0] video;
-wire				hs, vs, blank;
-wire	[1:0] buttons;
-wire	  [31:0] status;
-wire		[7:0] audio;
-wire    [10:0] ps2_key;
+assign clk_6p25 = div_clk[2];
+assign clk_3p125 = div_clk[3];
+assign CLK_VIDEO = clk_6p25;
+
+reg [3:0] div_clk;
+
+always @(posedge CLK_50M) begin
+	div_clk <= div_clk + 1'b1;
+end
+
+wire	[7:0] video;
+wire 	hs, vs, blank;
+wire	[1:0]  buttons;
+wire	[31:0] status;
+wire	[7:0]  audio;
+wire  [10:0] ps2_key;
 
 assign VGA_HS = hs;
 assign VGA_VS = vs;
 
-assign VGA_R = video;
-assign VGA_G = video;
-assign VGA_B = video;
+assign {VGA_R, VGA_G, VGA_B} = get_color(video);
 
 assign VGA_DE = ~blank;
 
@@ -141,11 +148,22 @@ wire ioctl_download, ioctl_wr;
 wire [26:0] ioctl_addr;
 wire [7:0] ioctl_dout;
 
+function [23:0] get_color;
+   input [7:0] pixel;
+begin
+   case(status[3:2])
+		2'b00: get_color = pixel ? 24'hffffff : 0;
+		2'b01: get_color = pixel ? 24'h33ff33 : 0;
+		2'b10: get_color = pixel ? 24'hffcc00 : 0;
+		2'b11: get_color = pixel ? 24'h40ffa6 : 0;			
+	endcase
+end
+endfunction
+
 
 galaksija_top galaksija_top (
-   .vidclk(clk_25),
+   .vidclk(clk_6p25),
    .cpuclk(clk_3p125),
-    .audclk(clk_1p7),
 	
    .reset_in(~(RESET | status[9] | buttons[1])),
    .ps2_key(ps2_key),
@@ -166,11 +184,11 @@ galaksija_top galaksija_top (
 
 hps_io #(.STRLEN(($size(CONF_STR)>>3))) hps_io 
 (
-   .clk_sys        (clk_25         ),
+   .clk_sys        (clk_6p25       ),
    .HPS_BUS        (HPS_BUS        ),
    .conf_str       (CONF_STR       ),	
    .buttons        (buttons        ),
-   .ps2_key	   (ps2_key        ),	
+   .ps2_key	       (ps2_key        ),	
    .status         (status         ),
    .ioctl_download (ioctl_download ),
    .ioctl_wr       (ioctl_wr       ),
@@ -178,12 +196,4 @@ hps_io #(.STRLEN(($size(CONF_STR)>>3))) hps_io
    .ioctl_dout     (ioctl_dout     )
 );
 
-dac #(
-   .C_bits(7))
-dac (
-   .clk_i(clk_25),
-   .res_n_i(1'b1),
-   .dac_i(audio),
-   .dac_o(AUDIO_L)
-  );
 endmodule
