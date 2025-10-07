@@ -23,6 +23,13 @@ module video_cleaner
 	input            HBlank,
 	input            VBlank,
 
+	//optional de
+	input            DE_in,
+
+	//optional interlace support
+	input            interlace,
+	input            f1,
+
 	// video output signals
 	output reg [7:0] VGA_R,
 	output reg [7:0] VGA_G,
@@ -33,7 +40,10 @@ module video_cleaner
 	
 	// optional aligned blank
 	output reg       HBlank_out,
-	output reg       VBlank_out
+	output reg       VBlank_out,
+	
+	// optional aligned de
+	output reg       DE_out
 );
 
 wire hs, vs;
@@ -49,13 +59,20 @@ always @(posedge clk_vid) begin
 	if(ce_pix) begin
 		HBlank_out <= hbl;
 
-		VGA_VS <= vs;
 		VGA_HS <= hs;
+
 		VGA_R  <= R;
 		VGA_G  <= G;
 		VGA_B  <= B;
+		DE_out <= DE_in;
 
-		if(HBlank_out & ~hbl) VBlank_out <= vbl;
+		if (interlace & f1) begin
+			VGA_VS <= vs;
+			VBlank_out <= vbl;
+		end else begin
+			if(~VGA_HS & hs) VGA_VS <= vs;
+			if(HBlank_out & ~hbl) VBlank_out <= vbl;
+		end
 	end
 end
 
