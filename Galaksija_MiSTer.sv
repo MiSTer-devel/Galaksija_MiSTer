@@ -209,7 +209,6 @@ wire				clk_6p25, clk_3p125;
 /* Clock */
 wire clk_sys;
 wire locked;
-wire ce_pix;
 pll pll
 (
 	.refclk(CLK_50M),
@@ -221,7 +220,11 @@ assign clk_6p25 = div_clk[2];
 assign clk_3p125 = div_clk[3];
 assign clk_1p7 = div_clk[4];
 assign CLK_VIDEO = clk_sys;
-assign ce_pix = clk_6p25;
+
+reg ce_pix;
+always @(posedge clk_sys) begin
+    ce_pix <= (div_clk[2:0] == 3'd0);
+end
 
 reg [4:0] div_clk;
 
@@ -263,7 +266,7 @@ endfunction
 galaksija_top galaksija_top (
    .vidclk(clk_6p25),
    .cpuclk(clk_3p125),
-	.audclk(clk_1p7),
+   .audclk(clk_1p7),
 	
    .reset_in(~(RESET | status[9] | buttons[1])),
    .ps2_key(ps2_key),
