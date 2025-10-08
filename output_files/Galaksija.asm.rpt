@@ -1,0 +1,102 @@
+Assembler report for Galaksija
+Tue Oct 07 18:57:04 2025
+Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Assembler Summary
+  3. Assembler Settings
+  4. Assembler Generated Files
+  5. Assembler Device Options: C:/Users/brend/Documents/GitHub/Galaksija_MiSTer/output_files/Galaksija.sof
+  6. Assembler Device Options: C:/Users/brend/Documents/GitHub/Galaksija_MiSTer/output_files/Galaksija.rbf
+  7. Assembler Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------+
+; Assembler Summary                                             ;
++-----------------------+---------------------------------------+
+; Assembler Status      ; Successful - Tue Oct 07 18:57:04 2025 ;
+; Revision Name         ; Galaksija                             ;
+; Top-level Entity Name ; sys_top                               ;
+; Family                ; Cyclone V                             ;
+; Device                ; 5CSEBA6U23I7                          ;
++-----------------------+---------------------------------------+
+
+
++----------------------------------+
+; Assembler Settings               ;
++--------+---------+---------------+
+; Option ; Setting ; Default Value ;
++--------+---------+---------------+
+
+
++-----------------------------------------------------------------------------+
+; Assembler Generated Files                                                   ;
++-----------------------------------------------------------------------------+
+; File Name                                                                   ;
++-----------------------------------------------------------------------------+
+; C:/Users/brend/Documents/GitHub/Galaksija_MiSTer/output_files/Galaksija.sof ;
+; C:/Users/brend/Documents/GitHub/Galaksija_MiSTer/output_files/Galaksija.rbf ;
++-----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/brend/Documents/GitHub/Galaksija_MiSTer/output_files/Galaksija.sof ;
++----------------+--------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                              ;
++----------------+--------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x03995265                                                                           ;
+; Checksum       ; 0x03995265                                                                           ;
++----------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/brend/Documents/GitHub/Galaksija_MiSTer/output_files/Galaksija.rbf ;
++---------------------+---------------------------------------------------------------------------------+
+; Option              ; Setting                                                                         ;
++---------------------+---------------------------------------------------------------------------------+
+; Raw Binary File     ;                                                                                 ;
+;  Compression Ratio  ; 2                                                                               ;
++---------------------+---------------------------------------------------------------------------------+
+
+
++--------------------+
+; Assembler Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Assembler
+    Info: Version 17.0.2 Build 602 07/19/2017 SJ Lite Edition
+    Info: Processing started: Tue Oct 07 18:56:53 2025
+Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Galaksija -c Galaksija
+Info (115030): Assembler is generating device programming files
+Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 5026 megabytes
+    Info: Processing ended: Tue Oct 07 18:57:05 2025
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:12
+
+

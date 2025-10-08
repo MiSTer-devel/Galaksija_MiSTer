@@ -1,0 +1,11 @@
+
+
+/home/alans/mister/Galaksija_MiSTer/rtl/pll.v
+
+Oct 06 10AM:22:25>: Megafunction PLL Intel FPGA IP v18.1 is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+/home/alans/mister/Galaksija_MiSTer/rtl/pll.v
+
+Oct 06 10AM:22:31>: Megafunction PLL Intel FPGA IP v18.1 is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
