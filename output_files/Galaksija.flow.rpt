@@ -1,5 +1,5 @@
 Flow report for Galaksija
-Tue Oct 07 18:02:03 2025
+Tue Oct 07 18:57:10 2025
 Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Oct 07 18:01:57 2025       ;
+; Flow Status                     ; Successful - Tue Oct 07 18:57:04 2025       ;
 ; Quartus Prime Version           ; 17.0.2 Build 602 07/19/2017 SJ Lite Edition ;
 ; Revision Name                   ; Galaksija                                   ;
 ; Top-level Entity Name           ; sys_top                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEBA6U23I7                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 8,648 / 41,910 ( 21 % )                     ;
-; Total registers                 ; 12445                                       ;
+; Logic utilization (in ALMs)     ; 8,600 / 41,910 ( 21 % )                     ;
+; Total registers                 ; 12376                                       ;
 ; Total pins                      ; 145 / 314 ( 46 % )                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 646,565 / 5,662,720 ( 11 % )                ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/07/2025 17:54:37 ;
+; Start date & time ; 10/07/2025 18:50:04 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Galaksija           ;
 +-------------------+---------------------+
@@ -81,7 +81,7 @@ agreement for further details.
 +------------------------------------------------------+----------------------------------------+--------------------+-------------+------------+
 ; ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP                  ; On                                     ; Off                ; --          ; --         ;
 ; AUTO_DELAY_CHAINS_FOR_HIGH_FANOUT_INPUT_PINS         ; On                                     ; Off                ; --          ; --         ;
-; COMPILER_SIGNATURE_ID                                ; 27214205279464.175987767746936         ; --                 ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                                ; 27214205279464.175988100438216         ; --                 ; --          ; --         ;
 ; ECO_OPTIMIZE_TIMING                                  ; On                                     ; Off                ; --          ; --         ;
 ; FINAL_PLACEMENT_OPTIMIZATION                         ; Always                                 ; Automatically      ; --          ; --         ;
 ; FITTER_EFFORT                                        ; Standard Fit                           ; Auto Fit           ; --          ; --         ;
@@ -132,11 +132,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:25     ; 2.4                     ; 6532 MB             ; 00:02:47                           ;
-; Fitter                    ; 00:05:31     ; 1.4                     ; 8637 MB             ; 00:36:14                           ;
-; Assembler                 ; 00:00:13     ; 1.0                     ; 5026 MB             ; 00:00:13                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.2                     ; 5251 MB             ; 00:00:05                           ;
-; Total                     ; 00:07:14     ; --                      ; --                  ; 00:39:19                           ;
+; Analysis & Synthesis      ; 00:00:50     ; 3.3                     ; 5542 MB             ; 00:02:11                           ;
+; Fitter                    ; 00:05:50     ; 1.4                     ; 8688 MB             ; 00:36:50                           ;
+; Assembler                 ; 00:00:11     ; 1.0                     ; 5026 MB             ; 00:00:11                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.2                     ; 5252 MB             ; 00:00:05                           ;
+; Total                     ; 00:06:56     ; --                      ; --                  ; 00:39:17                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
