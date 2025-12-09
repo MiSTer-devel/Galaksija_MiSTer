@@ -1,5 +1,5 @@
 Assembler report for Galaksija
-Tue Oct 07 18:57:04 2025
+Thu Nov 27 14:01:22 2025
 Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Lite Edition
 
 
@@ -10,8 +10,8 @@ Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/brend/Documents/GitHub/Galaksija_MiSTer/output_files/Galaksija.sof
-  6. Assembler Device Options: C:/Users/brend/Documents/GitHub/Galaksija_MiSTer/output_files/Galaksija.rbf
+  5. Assembler Device Options: D:/mywork/NewFPGA/Galaksija_MiSTer/output_files/Galaksija.sof
+  6. Assembler Device Options: D:/mywork/NewFPGA/Galaksija_MiSTer/output_files/Galaksija.rbf
   7. Assembler Messages
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Oct 07 18:57:04 2025 ;
+; Assembler Status      ; Successful - Thu Nov 27 14:01:22 2025 ;
 ; Revision Name         ; Galaksija                             ;
 ; Top-level Entity Name ; sys_top                               ;
 ; Family                ; Cyclone V                             ;
@@ -54,34 +54,34 @@ agreement for further details.
 +--------+---------+---------------+
 
 
-+-----------------------------------------------------------------------------+
-; Assembler Generated Files                                                   ;
-+-----------------------------------------------------------------------------+
-; File Name                                                                   ;
-+-----------------------------------------------------------------------------+
-; C:/Users/brend/Documents/GitHub/Galaksija_MiSTer/output_files/Galaksija.sof ;
-; C:/Users/brend/Documents/GitHub/Galaksija_MiSTer/output_files/Galaksija.rbf ;
-+-----------------------------------------------------------------------------+
++---------------------------------------------------------------+
+; Assembler Generated Files                                     ;
++---------------------------------------------------------------+
+; File Name                                                     ;
++---------------------------------------------------------------+
+; D:/mywork/NewFPGA/Galaksija_MiSTer/output_files/Galaksija.sof ;
+; D:/mywork/NewFPGA/Galaksija_MiSTer/output_files/Galaksija.rbf ;
++---------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/brend/Documents/GitHub/Galaksija_MiSTer/output_files/Galaksija.sof ;
-+----------------+--------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                              ;
-+----------------+--------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x03995265                                                                           ;
-; Checksum       ; 0x03995265                                                                           ;
-+----------------+--------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+; Assembler Device Options: D:/mywork/NewFPGA/Galaksija_MiSTer/output_files/Galaksija.sof ;
++----------------+------------------------------------------------------------------------+
+; Option         ; Setting                                                                ;
++----------------+------------------------------------------------------------------------+
+; JTAG usercode  ; 0x0398DEFB                                                             ;
+; Checksum       ; 0x0398DEFB                                                             ;
++----------------+------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/brend/Documents/GitHub/Galaksija_MiSTer/output_files/Galaksija.rbf ;
-+---------------------+---------------------------------------------------------------------------------+
-; Option              ; Setting                                                                         ;
-+---------------------+---------------------------------------------------------------------------------+
-; Raw Binary File     ;                                                                                 ;
-;  Compression Ratio  ; 2                                                                               ;
-+---------------------+---------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+; Assembler Device Options: D:/mywork/NewFPGA/Galaksija_MiSTer/output_files/Galaksija.rbf ;
++---------------------+-------------------------------------------------------------------+
+; Option              ; Setting                                                           ;
++---------------------+-------------------------------------------------------------------+
+; Raw Binary File     ;                                                                   ;
+;  Compression Ratio  ; 2                                                                 ;
++---------------------+-------------------------------------------------------------------+
 
 
 +--------------------+
@@ -90,13 +90,13 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 17.0.2 Build 602 07/19/2017 SJ Lite Edition
-    Info: Processing started: Tue Oct 07 18:56:53 2025
+    Info: Processing started: Thu Nov 27 14:01:10 2025
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Galaksija -c Galaksija
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 5026 megabytes
-    Info: Processing ended: Tue Oct 07 18:57:05 2025
-    Info: Elapsed time: 00:00:12
+    Info: Peak virtual memory: 5020 megabytes
+    Info: Processing ended: Thu Nov 27 14:01:23 2025
+    Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:12
 
 

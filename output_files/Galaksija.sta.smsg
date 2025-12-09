@@ -1,1 +1,1 @@
-Warning (332174): Ignored filter at sys_top.sdc(60): arc* could not be matched with a clock or keeper File: C:/Users/brend/Documents/GitHub/Galaksija_MiSTer/sys/sys_top.sdc Line: 60
+Warning (332174): Ignored filter at sys_top.sdc(60): arc* could not be matched with a clock or keeper File: D:/mywork/NewFPGA/Galaksija_MiSTer/sys/sys_top.sdc Line: 60

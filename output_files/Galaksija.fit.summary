@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Oct 07 18:56:47 2025
+Fitter Status : Successful - Thu Nov 27 14:01:04 2025
 Quartus Prime Version : 17.0.2 Build 602 07/19/2017 SJ Lite Edition
 Revision Name : Galaksija
 Top-level Entity Name : sys_top
 Family : Cyclone V
 Device : 5CSEBA6U23I7
 Timing Models : Final
-Logic utilization (in ALMs) : 8,600 / 41,910 ( 21 % )
-Total registers : 12376
+Logic utilization (in ALMs) : 8,608 / 41,910 ( 21 % )
+Total registers : 12389
 Total pins : 145 / 314 ( 46 % )
 Total virtual pins : 0
 Total block memory bits : 646,565 / 5,662,720 ( 11 % )
